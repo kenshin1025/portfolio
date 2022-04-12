@@ -2,9 +2,7 @@ import { useState } from "react";
 
 const Game = () => {
   const Data = 1;
-
   const [Flow, setFlow] = useState([]);
-  // let Flow:Function[] = [];
 
   function source() {
     return Data;
