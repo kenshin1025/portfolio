@@ -1,6 +1,14 @@
 import Image from "next/image";
 
 export const AboutSection = () => {
+  type link = { key: string; url: string; value: string };
+  const links: link[] = [
+    {
+      key: "GitHub",
+      url: "https://github.com/kenshin1025",
+      value: "@kenshin1025",
+    },
+  ];
   return (
     <div className="text-center mt-8">
       <h2 className="mt-2 text-primary text-3xl font-bold">けんしんについて</h2>
@@ -19,6 +27,18 @@ export const AboutSection = () => {
           <br />
           (Kenshin)
         </h2>
+      </div>
+      <div>
+        <div>
+          {links.map((link) => (
+            <dl key={link.key}>
+              <dt>{link.key}</dt>
+              <dd>
+                <a href={link.url}>{link.value}</a>
+              </dd>
+            </dl>
+          ))}
+        </div>
       </div>
     </div>
   );
